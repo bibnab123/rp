@@ -2,6 +2,23 @@ from pathlib import Path
 import os
 import environ
 
+DEBUG = os.environ.get('DEBUG', True)
+
+# Email Configuration
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', True)
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'thproject669@gmail.com')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'arri ezii pydi heqw')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'thproject669@gmail.com')
+CONTACT_EMAIL = os.environ.get('CONTACT_EMAIL', 'thproject669@gmail.com')
+
+# Other settings...
+
+# Other settings...
+
+
 env = environ.Env(
     DEBUG=(bool, True),
     )
@@ -39,7 +56,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'allauth',
     'allauth.account',
-    
     'accounts',
 ]
 
@@ -174,14 +190,14 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-EMAIL_BACKEND = env('EMAIL_BACKEND')
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_PORT = env('EMAIL_PORT')
-EMAIL_USE_TLS = env('EMAIL_USE_TLS')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
-CONTACT_EMAIL = env('CONTACT_EMAIL')
+# EMAIL_BACKEND = env('EMAIL_BACKEND')
+# EMAIL_HOST = env('EMAIL_HOST')
+# EMAIL_PORT = env('EMAIL_PORT')
+# EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+# DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+# CONTACT_EMAIL = env('CONTACT_EMAIL')
 
 
 
